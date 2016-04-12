@@ -1,0 +1,58 @@
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">  
+            <h2>Fill in the Form Below</h2>  
+            <form>
+                <div class="form-group">
+                    <label for="name">Product ID</label>
+                    <!-- Update the product ID to check to make sure that the change would be ok -->
+                    <input type="text" class="form-control" id="productID" placeholder="Product ID" ng-model="product.productID"/>
+                </div>
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" class="form-control" id="productName" placeholder="Product Name" ng-model="product.productName" />
+                </div>
+                <div class="form-group">
+                    <label for="supplierID">Supplier ID</label>
+                    <input type="text" class="form-control" id="supplierID" placeholder="Supplier ID" ng-model="product.supplierID" />
+                </div>
+                <div class="form-group">
+                    <label for="quantityPerUnit">Quantity Per Unit</label>
+                    <input type="text" class="form-control" id="quantityPerUnit" placeholder="Quantity Per Unit" ng-model="product.quantityPerUnit" />
+                </div>
+                <div class="form-group">
+                    <label for="unitPrice">Unit Price</label>
+                    <input type="text" class="form-control" id="unitPrice" placeholder="Unit Price" ng-model="product.unitPrice" />
+                </div>
+                <div class="form-group">
+                    <label for="unitsInStock">Units In Stock</label>
+                    <input type="text" class="form-control" id="unitsInStock" placeholder="Units In Stock" ng-model="product.unitsInStock" />
+                </div>
+                <div class="form-group">
+                    <label for="unitsOnOrder">Units On Order</label>
+                    <input type="text" class="form-control" id="unitsOnOrder" placeholder="Units On Order" ng-model="product.unitsOnOrder" />
+                </div>
+                <div class="form-group">
+                    <label for="reorderLevel">Reorder Level</label>
+                    <input type="text" class="form-control" id="reorderLevel" placeholder="Reorder Level" ng-model="product.reorderLevel" />
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="discontinued" id="isDiscontinued" value="true" ng-model="product.discontinued">
+                    This product has been discontinued
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="discontinued" id="isNotDiscontinued" value="false" ng-model="product.discontinued">
+                    This product is stil active
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" ng-click="save()">Submit</button>
+                <button type="submit" class="btn btn-danger" ng-click="delete()" ng-disabled="!isUpdating">Delete</button>
+                 <button type="submit" class="btn btn-default" ng-click="go('/')">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+#!/bin/bash
+export ANGULAR_DIR=${DIR%/*}
+
+# Check permissions on node? 
+if [ ! -e $NODE_EXE ]; then
+	echo "$NODE_EXE could not be found"
+	exit
+fi
+
+if [ ! -x $NODE_EXE ]; then
+	echo "$NODE_EXE does not have executable permission"
+	exit
+fi
+
+#node app/server.js
+$NODE_EXE $ANGULAR_HOME/backend/httpServer/server.js &> $ANGULAR_HOME/backend/logs/http.log &

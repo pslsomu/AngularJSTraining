@@ -1,0 +1,7 @@
+<!--
+    Refactor to use Location rather then href
+-->
+<h2>List of Teams</h2>
+<ul>
+    <li ng-repeat="one in teams"><a ng-href="#/team/{{one.Id}}">{{one.Name}}</a></li>
+</ul>

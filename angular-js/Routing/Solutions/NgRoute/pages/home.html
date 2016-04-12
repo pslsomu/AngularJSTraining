@@ -1,0 +1,9 @@
+<!--
+    Create a landing page that displays a list of teams; you should be able to
+    click on a team and navigate to its detail
+-->
+
+<h2>List of Teams</h2>
+<ul>
+    <li ng-repeat="one in teams"><a href="#/team/{{one.Id}}">{{one.Name}}</a></li>
+</ul>

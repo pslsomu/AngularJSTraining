@@ -1,0 +1,28 @@
+#!/bin/bash
+if [ ! -e $ANGULAR_HOME ]; then
+	echo "$ANGULAR_HOME could not be found"
+	exit
+fi
+
+ORIGINAL_PATH=$PATH
+PATH=$DIR:$ANGULAR_HOME/node_modules/.bin:$PATH
+
+# Check permissions on node? 
+if [ ! -e $NODE_EXE ]; then
+	echo "$NODE_EXE could not be found"
+	exit
+fi
+
+if [ ! -x $NODE_EXE ]; then
+	echo "$NODE_EXE does not have executable permission"
+	exit
+fi
+
+mongod_start=$(ps -aef | grep mongod | grep -v grep | wc -l | xargs echo -n)
+
+if ! [ "$mongod_start" == 1 ] ; then
+  echo "Please start the mongod server and try again."
+  exit
+fi
+
+$NODE_EXE $ANGULAR_HOME/backend/httpServer/rest-server.js &> $ANGULAR_HOME/backend/logs/rest.log &

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <html ng-app="myFirstApp">
+     <head>
+        <title>First Example</title>
+    </head>
+    <body ng-controller="myController">
+
+        <h1>Controller with State</h1>
+        <h2>{{subTitle}}</h2>
+
+        <p>
+            Change the subtitle: <input type="text" ng-model="subTitle" />
+        </p>
+
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="first-controller.js"></script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html ng-app="myOptions">
+     <head>
+        <title>Options</title>
+    </head>
+    <body ng-controller="MainController">
+        <h1>Options with Objects</h1>
+        
+        <h2>Select from People</h2>
+        <select name="person" ng-model="person" ng-options="one.Name for one in people track by one.Id">
+            <option value="">[Please Choose]</option>
+        </select>
+        
+        
+        <h2>Selected person</h2>
+        <ul>
+            <li>Id: {{person.Id}}</li>
+            <li>Name: {{person.Name}}</li>
+            <li>Gender: {{person.Gender}}</li>
+            <li>Age: {{person.Age}}</li>
+        </ul>
+        
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

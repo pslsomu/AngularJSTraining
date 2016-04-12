@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html ng-app="scopeApp">
+     <head>
+        <title>Scopes</title>
+        
+        <style>
+        
+            div { padding:5px;margin:5px;}            
+            ul { list-style-type: none; }
+            ul li { padding:2pt;}
+        </style>
+        
+    </head>
+    <body>
+        <div ng-controller="ParentController" style="border:2px solid red">
+            <h2>ParentController</h2>
+            <ul>
+                <li>Name: <strong>{{name}}</strong></li>
+                <li>Parent: <strong>{{$parent.name}}</strong></li>
+                <li>Grandparent: <strong>{{$parent.$parent.name}} </strong></li>
+            </ul>
+            
+            <div ng-controller="FirstChildController"  style="border:2px solid blue">
+                <h2>FirstChildController</h2>
+                <ul>
+                    <li>Name: <strong>{{name}}</strong></li>
+                    <li>Parent: <strong>{{$parent.name}}</strong></li>
+                    <li>Grandparent: <strong>{{$parent.$parent.name}} </strong></li>
+                </ul>
+                
+                
+            </div>
+            
+            <div ng-controller="SecondChildController"  style="border:2px solid green">
+                <h2>SecondChildController</h2>
+                <ul>
+                    <li>Name: <strong>{{name}}</strong></li>
+                    <li>Parent: <strong>{{$parent.name}}</strong></li>
+                    <li>Grandparent: <strong>{{$parent.$parent.name}} </strong></li>
+                </ul>
+                
+                <div ng-controller="ThirdChildController"  style="border:2px solid orange">
+                    <h2>ThirdChildController</h2>
+                    <ul>
+                        <li>Name: <strong>{{name}}</strong></li>
+                        <li>Parent: <strong>{{$parent.name}}</strong></li>
+                        <li>Grandparent: <strong>{{$parent.$parent.name}} </strong></li>
+                    </ul>
+                
+                </div>
+            </div>
+        </div>
+        
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

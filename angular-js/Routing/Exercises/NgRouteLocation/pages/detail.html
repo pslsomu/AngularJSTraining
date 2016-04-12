@@ -1,0 +1,17 @@
+<!--
+    Refactor to use Location rather then href
+-->
+
+<h2 ng-hide="team">There was no team found for the given ID</h2>
+<div ng-show="team">
+    <h2>Team Details</h2>
+    <ul>
+        <li>Name: {{team.Name}}</li>
+        <li>Division: {{team.Division}}</li>
+        <li>League: {{team.League}}</li>
+        <li>Wins: {{team.Wins}}</li>
+        <li>Loses: {{team.Loses}}</li>
+        <li>Win %: {{(team.Wins / (team.Loses + team.Wins)) * 1000 | number:2}}</li>
+    </ul>
+    <a href="#/"> Home </a>
+</div>

@@ -1,0 +1,20 @@
+<!-- 
+    Fix the view by removing excess elements no longer needed by
+    switching to named views
+-->
+
+<h2>Filter By:</h2>
+<ul>
+    <li>By Name: <input type="text" ng-model="filter.Name" /></li>
+    <li>By League: <input type="number" ng-model="filter.League" /></li>
+    <li>By Division: <input type="number" ng-model="filter.Division" /></li>
+</ul>
+
+<h2>Order By:</h2>
+    <ul>
+    <li>Sort On: <select name="order" ng-options="one for one in availableForSort track by one" ng-model="sort.on"></select></li>
+    <li>Direction:  <input type="radio" ng-model="sort.direction" name="asc" ng-value="false" />
+                    <label for="asc">Asc</label>
+                    <input type="radio" ng-model="sort.direction" name="desc" ng-value="true" />
+                    <label for="desc">Desc</label></li>
+</ul>

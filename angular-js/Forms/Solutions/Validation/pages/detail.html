@@ -1,0 +1,74 @@
+<!--  
+    
+    Setup your page validation inline with the data model from the server:
+    var fieldConfig = {
+        "categoryID" : {type: Number, required: false},
+        "discontinued" : Boolean,
+        "productID" : {type: Number, required: true},
+        "productName" : {type: String, required: true},
+        "quantityPerUnit" : String,
+        "reorderLevel" : Number,
+        "supplierID" : Number,
+        "unitPrice" : Number,
+        "unitsInStock" : Number,
+        "unitsOnOrder" : Number
+        };
+        
+     You should make certain that the submit button is disabled until all of the fields are valid
+--> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">  
+            <h2>Fill in the Form Below</h2>  
+            <form name="EditProducts" novalidate>
+                <div class="form-group">
+                    <label for="name">Product ID</label>
+                    <input type="number" class="form-control" name="productID" placeholder="Product ID" ng-model="product.productID" required />
+                </div>
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" class="form-control" name="productName" placeholder="Product Name" ng-model="product.productName" required />
+                </div>
+                <div class="form-group">
+                    <label for="supplierID">Supplier ID</label>
+                    <input type="number" class="form-control" name="supplierID" placeholder="Supplier ID" ng-model="product.supplierID" />
+                </div>
+                <div class="form-group">
+                    <label for="quantityPerUnit">Quantity Per Unit</label>
+                    <input type="text" class="form-control" name="quantityPerUnit" placeholder="Quantity Per Unit" ng-model="product.quantityPerUnit" />
+                </div>
+                <div class="form-group">
+                    <label for="unitPrice">Unit Price</label>
+                    <input type="number" class="form-control" name="unitPrice" placeholder="Unit Price" ng-model="product.unitPrice" />
+                </div>
+                <div class="form-group">
+                    <label for="unitsInStock">Units In Stock</label>
+                    <input type="number" class="form-control" name="unitsInStock" placeholder="Units In Stock" ng-model="product.unitsInStock" />
+                </div>
+                <div class="form-group">
+                    <label for="unitsOnOrder">Units On Order</label>
+                    <input type="number" class="form-control" name="unitsOnOrder" placeholder="Units On Order" ng-model="product.unitsOnOrder"/>
+                </div>
+                <div class="form-group">
+                    <label for="reorderLevel">Reorder Level</label>
+                    <input type="number" class="form-control" name="reorderLevel" placeholder="Reorder Level" ng-model="product.reorderLevel"/>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="discontinued" name="isDiscontinued" ng-value="true" ng-model="product.discontinued" />
+                    This product has been discontinued
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="discontinued" name="isNotDiscontinued" ng-value="false" ng-model="product.discontinued" checked />
+                    This product is stil active
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" ng-submit ng-click="save()" ng-disabled="EditProducts.$invalid">Submit</button>
+                <button type="submit" class="btn btn-danger" ng-click="delete()" ng-disabled="!isUpdating">Delete</button>
+                 <button type="submit" class="btn btn-default" ng-click="go('/')">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

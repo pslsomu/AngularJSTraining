@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+    <html ng-app="myHttp">
+     <head>
+        <title>First HTTP</title>
+    </head>
+    <body ng-controller="MainController">
+        
+        <h1>States</h1>
+        <ul>
+            <li ng-repeat="product in products">{{product.productName}}</li>
+        </ul>
+        
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

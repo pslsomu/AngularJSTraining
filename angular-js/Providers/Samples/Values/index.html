@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html ng-app="myValues">
+     <head>
+        <title>Values Example</title>
+    </head>
+    <body>
+        <div ng-controller="FirstController">
+            <ul>
+                <li><b>myValue</b>:{{value}}</li>
+                <li><b>myConstant</b>:{{constant}}</li>
+            </ul>
+        </div>
+        
+        <div ng-controller="SecondController">
+            <ul>
+                <li><b>myValue</b>:{{value}}</li>
+                <li><b>myConstant</b>:{{constant}}</li>
+            </ul>
+        </div>
+        
+        
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

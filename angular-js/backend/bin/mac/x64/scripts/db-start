@@ -1,0 +1,19 @@
+#!/bin/bash
+# Assumes that mongod is on your PATH. If not, edit appropriately
+
+ORIGINAL_PATH=$PATH
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
+REST_DIR=$ANGULAR_HOME/backend
+PATH=$DIR:$REST_DIR/node_modules/.bin:$PATH
+
+if [ ! -e $MONGOD_EXE ]; then
+	echo "$MONGOD_EXE could not be found"
+	exit
+fi
+
+if [ ! -e $MONGOD_EXE ]; then
+	echo "$MONGOD_EXE does not have executable permission"
+	exit
+fi
+
+$MONGOD_EXE --httpinterface --rest --directoryperdb --dbpath $REST_DIR/data/db > $REST_DIR/logs/mongo-start.log &

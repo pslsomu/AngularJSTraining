@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+export ANGULAR_DIR=${DIR%/*}
+
+# Check for webdriver-manager on $PATH?
+# Check that webdriver-manager is executable? 
+hash webdriver-manager 2>/dev/null || { echo >&2 "This requires webdriver-manager but it's not avilable. Aborting."; exit 1; }
+
+webdriver-manager start 
+#&> $DIR/logs/webdriver-manager.log

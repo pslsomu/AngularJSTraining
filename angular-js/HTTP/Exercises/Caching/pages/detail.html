@@ -1,0 +1,12 @@
+<h2 ng-hide="product">There was no Product found for the given ID</h2>
+
+<div ng-show="product">
+    <h2>Product Details</h2>
+    <ul>
+        <li>Name: {{product.productName}}</li>
+        <li>Category ID: {{product.categoryID}}</li>
+        <li>Quantity Per Unit: {{product.quantityPerUnit}}</li>
+    </ul>
+    
+    <a href ng-click="go('/')"> Home </a>
+</div>

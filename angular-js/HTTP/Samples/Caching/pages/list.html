@@ -1,0 +1,5 @@
+<h2>List of States</h2>
+<input type="button" ng-click="clearCache()" value="Clear All Cached" />
+<ul>
+    <li ng-repeat="state in states"><a href ng-click="selectState(state)">{{state.name}}</a></li>
+</ul>

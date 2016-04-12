@@ -1,0 +1,12 @@
+<!-- Setup this template so that it creates a list of all of the panes 
+that are avaialble to display -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button class="btn" ng-repeat="pane in panes" ng-class="{'btn-primary':pane.selected, 'btn-default':!pane.selected}" ng-click="select(pane)">{{pane.header}}</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tab-content" ng-transclude></div>    
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html ng-app="myApp">
+     <head>
+        <title>Require Directives</title>
+        <link href="/common/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body ng-controller="HomeController">
+        <h1>Directives</h1>
+
+        <!-- 
+            Implement a container with a repeater that spits out the pane directive 
+            and then create a template to adequately display the team information
+        -->
+        <container>
+           <pane header="team.Name" ng-repeat="team in teams">
+                    <ul>
+                        <li><b>Name:</b> {{team.Name}}</li>
+                        <li><b>League:</b> {{team.League}}</li>
+                        <li><b>Division:</b> {{team.Division}}</li>
+                        <li><b>Wins:</b> {{team.Wins}}</li>
+                        <li><b>Loses:</b> {{team.Loses}}</li>
+                    </ul>
+                </pane>
+        </container>
+        
+        <script src="/common/js/jquery/jquery.js"></script>
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="directives/directives.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!-- 
+    Setup a NG-Messages Container that tells a user which fields are actually
+    invalid
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">              
+            <h2>Fill in the Form Below</h2>  
+            <form name="EditProducts" novalidate>
+                <div class="form-group">
+                    <label for="name">Product ID</label>
+                    <input type="number" class="form-control" name="productID" placeholder="Product ID" ng-model="product.productID" required />
+                </div>
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" class="form-control" name="productName" placeholder="Product Name" ng-model="product.productName" required />
+                </div>
+                <div class="form-group">
+                    <label for="supplierID">Supplier ID</label>
+                    <input type="number" class="form-control" name="supplierID" placeholder="Supplier ID" ng-model="product.supplierID" required />
+                </div>
+                <div class="form-group">
+                    <label for="quantityPerUnit">Quantity Per Unit</label>
+                    <input type="text" class="form-control" name="quantityPerUnit" placeholder="Quantity Per Unit" ng-model="product.quantityPerUnit" required />
+                </div>
+                <div class="form-group">
+                    <label for="unitPrice">Unit Price</label>
+                    <input type="number" class="form-control" name="unitPrice" placeholder="Unit Price" ng-model="product.unitPrice" required />
+                </div>
+                <div class="form-group">
+                    <label for="unitsInStock">Units In Stock</label>
+                    <input type="number" class="form-control" name="unitsInStock" placeholder="Units In Stock" ng-model="product.unitsInStock" required />
+                </div>
+                <div class="form-group">
+                    <label for="unitsOnOrder">Units On Order</label>
+                    <input type="number" class="form-control" name="unitsOnOrder" placeholder="Units On Order" ng-model="product.unitsOnOrder" required/>
+                </div>
+                <div class="form-group">
+                    <label for="reorderLevel">Reorder Level</label>
+                    <input type="number" class="form-control" name="reorderLevel" placeholder="Reorder Level" ng-model="product.reorderLevel" required/>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="discontinued" name="isDiscontinued" value="true" ng-model="product.discontinued" />
+                    This product has been discontinued
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="discontinued" name="isNotDiscontinued" value="false" ng-model="product.discontinued" checked />
+                    This product is stil active
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" ng-click="save()" ng-disabled="EditProducts.$invalid">Submit</button>
+                <button type="submit" class="btn btn-danger" ng-click="delete()" ng-disabled="!isUpdating">Delete</button>
+                 <button type="submit" class="btn btn-default" ng-click="go('/')">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

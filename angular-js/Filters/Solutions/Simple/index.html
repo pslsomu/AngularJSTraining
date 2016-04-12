@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html ng-app="filterApp">
+     <head>
+        <title>Filter App</title>
+    </head>
+    <body ng-controller="MainController">
+        <h1>Filter Controller with Sort</h1>
+        
+        <!-- 
+            Add a section to filter on teams by Name, League, and/or Division
+         -->
+        <h2>Filter By:</h2>
+        <ul>
+            <li>By Name: <input type="text" ng-model="filter.Name" /></li>
+            <li>By League: <input type="text" ng-model="filter.League" /></li>
+            <li>By Division: <input type="text" ng-model="filter.Division" /></li>
+        </ul>
+        
+        <!-- 
+            Add a form to sort on wins and loses it should also allow you to control the direction of the sort
+        -->
+        
+        <h2>Order By:</h2>
+         <ul>
+            <li>Sort On: <select name="order" ng-options="one for one in availableForSort track by one" ng-model="sortOn"></select></li>
+            <li>Direction:  <input type="radio" ng-model="sortDirection" name="asc" id="asc" ng-value="false" />
+                            <label for="asc">Asc</label>
+                            <input type="radio" ng-model="sortDirection" name="desc" id="desc" ng-value="true" />
+                            <label for="desc">Desc</label></li>
+        </ul>
+        
+        <!--
+            Create a table to display the records and apply both the filter and the sort
+        -->
+        <h2>Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>League</th>
+                    <th>Division</th>
+                    <th>Wins</th>
+                    <th>Loses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="one in teams | filter:filter | orderBy:sortOn:sortDirection">
+                    <td>{{one.Name}}</td>
+                    <td>{{one.League}}</td>
+                    <td>{{one.Division}}</td>
+                    <td>{{one.Wins}}</td>
+                    <td>{{one.Loses}}</td>
+                </tr>
+            </tbody>
+        </table>
+            
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

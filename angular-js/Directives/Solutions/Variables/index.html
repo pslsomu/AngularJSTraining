@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+    <html ng-app="myApp">
+     <head>
+        <title>Simple Directives</title>
+    </head>
+    <body ng-controller="HomeController">
+        <h1>Directives</h1>
+
+        <!-- add a timer to increment the ticks -->
+        <timer counter="ticks"></timer>
+        
+        <h4>Elasped Time: {{ticks}}</h4>
+
+        <script src="/common/js/jquery/jquery.js"></script>
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="directives/directives.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

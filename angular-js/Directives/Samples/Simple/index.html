@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html ng-app="myApp">
+     <head>
+        <title>Simple Directives</title>
+    </head>
+    <body ng-controller="HomeController">
+        <h1>Directives</h1>
+        
+        <first-one></first-one>
+        <br />
+        <second-one></second-one> <!-- This does not render -->
+        <br />
+        <p second-one></p>
+        <br />
+        <p class="thrid-one"></p>
+        <br />
+        <fourth-one></fourth-one>
+        <br />
+        <p fourth-one></p>
+        <br />
+        <p class="fourth-one"></p>
+        <br />
+        <fifth-one></fifth-one>
+        <br />
+        
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="directives/directives.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

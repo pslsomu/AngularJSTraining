@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html ng-app="myTeamApp">
+     <head>
+        <title>Repeater</title>
+    </head>
+    <body ng-controller="ListController">
+        <h1>View Teams</h1>        
+        
+        <h2>Select a team</h2>
+        <!-- 
+            Implement a select box that has the list of teams and a default (or empty) option 
+            When selected it should populate the UL below
+        -->
+        
+        <h2>Selected Team</h2>
+        <ul>
+            <li>Name: {{team.Name}}</li>
+            <li>League: {{team.League}}</li>
+            <li>Division: {{team.Division}}</li>
+            <li>Wins: {{team.Wins}}</li>
+            <li>Loses: {{team.Loses}}</li>
+        </ul>
+           
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

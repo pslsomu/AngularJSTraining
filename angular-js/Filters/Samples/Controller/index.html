@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html ng-app="myEventHandlers">
+     <head>
+        <title>Event Handlers</title>
+    </head>
+    <body ng-controller="MainController">
+        <h1>Event Handlers</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="one in people">
+                    <td>{{one.Name}}</td>
+                    <td>{{one.Age}}</td>
+                    <td>{{one.Gender}}</td>
+                    <td><input type="button" value="X" ng-click="remove(one, $event)" /></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input type="text" ng-model="addPerson.Name" ng-focus="handleEvent($event)" ng-blur="handleEvent($event)"/></td>
+                    <td><input type="number" ng-model="addPerson.Age" ng-focus="handleEvent($event)" ng-blur="handleEvent($event)"/></td>
+                    <td><input type="radio" name="gender" id="female" value="Female" ng-model="addPerson.Gender" ng-focus="handleEvent($event)" ng-blur="handleEvent($event)"/>
+                        <label for="female">Female</label><br />
+                        <input type="radio" name="gender" id="male" value="Male" ng-model="addPerson.Gender" ng-focus="handleEvent($event)" ng-blur="handleEvent($event)"/>
+                        <label for="male">Male</label>
+                    </td>
+                    <td><input type="button" value="+" ng-click="add($event)" /></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div>
+            {{lastEvent}}
+        </div>
+
+        <script src="/common/js/angular/angular.js"></script>
+        <!--<script src="controllers-$filter.js"></script>-->
+        <script src="controllers-filterFilter.js"></script>
+    </body>
+</html>

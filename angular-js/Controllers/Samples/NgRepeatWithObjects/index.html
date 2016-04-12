@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html ng-app="myRepeater">
+     <head>
+        <title>Repeater</title>
+    </head>
+    <body ng-controller="MainController">
+        <h1>Repeaters with Objects</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="one in people">
+                    <td>{{one.Name}}</td>
+                    <td>{{one.Age}}</td>
+                    <td>{{one.Gender}}</td>
+                    <td>{{one}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

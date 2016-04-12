@@ -1,0 +1,97 @@
+<form-state form="EditStates"></form-state>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="bs-callout bs-callout-danger" ng-show="EditStates.$invalid && EditStates.$submitted"> 
+                <h4>You have the following errors</h4>
+                <ul style="list-style-type:none">
+                    <li ng-messages="EditStates.name.$error">
+                        <div ng-message="required">State Name is required</div>
+                    </li>
+                    <li ng-messages="EditStates.abbreviation.$error">
+                        <div ng-message="required">State Abbreviation is required</div>
+                        <div ng-message="minlength">State Abbreviation can be no shorter than 2 chars</div>
+                        <div ng-message="maxlength">State Abbreviation can be no longer than 2 chars</div>
+                        <div ng-message="checkAbbreviation">State Abbreviation is a duplicate. Please choose another</div>
+                    </li>
+                    <li ng-messages="EditStates.squareMiles.$error">
+                        <div ng-message="required">Square Miles is required</div>
+                        <div ng-message="number">Square Miles should be a positive number</div>
+                        <div ng-message="range">Square Miles should be between 200000 and 100</div>
+                    </li>
+                    <li ng-messages="EditStates.mostPopulousCity.$error">
+                        <div ng-message="required">Most Populous City is required</div>
+                    </li>
+                    <li ng-messages="EditStates.population.$error">
+                        <div ng-message="required">Population is required</div>
+                        <div ng-message="number">Population must be a positive number</div>
+                    </li>
+                    <li ng-messages="EditStates.timeZone1.$error">
+                        <div ng-message="required">Time Zone 1 is required</div>
+                    </li>
+                    <li ng-messages="EditStates.countryCode.$error">
+                        <div ng-message="required">Country Code is required</div>
+                        <div ng-message="minlength">Country Code can be no shorter than 3 chars</div>
+                        <div ng-message="maxlength">Country Code can be no longer than 3 chars</div>
+                    </li>
+                </ul>
+            </div>
+              
+            <h2>Fill in the Form Below</h2>  
+            <form name="EditStates" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="State Name" ng-model="state.name" required />
+                </div>
+                <div class="form-group">
+                    <label for="abbreviation">Abbreviation</label>
+                    <input type="text" class="form-control" name="abbreviation" placeholder="State Abbreviation" ng-model="state.abbreviation" ng-model-options="{updateOn:'change'}" check-abbreviation required ng-maxlength="2" ng-minlength="2"/>
+                </div>
+                <div class="form-group">
+                    <label for="capital">Capital</label>
+                    <input type="text" class="form-control" name="capital" placeholder="Capital" ng-model="state.capital" required/>
+                </div>
+                <div class="form-group">
+                    <label for="mostPopulousCity">Most Populous City</label>
+                    <input type="text" class="form-control" name="mostPopulousCity" placeholder="Most Populous City" ng-model="state.mostPopulousCity" required />
+                </div>
+                <div class="form-group">
+                    <label for="population">Population</label>
+                    <input type="number" class="form-control" name="population" placeholder="Population" ng-model="state.population" required positive-integer />
+                </div>
+                <div class="form-group">
+                    <label for="squareMiles">Square Miles</label>
+                    <input type="number" class="form-control" name="squareMiles" placeholder="Square Miles" ng-model="state.squareMiles" required positive-integer range upper="2000000" lower="100" />
+                </div>
+                <div class="form-group">
+                    <label for="timeZone1">Time Zone 1</label>
+                    <input type="text" class="form-control" name="timeZone1" placeholder="Time Zone 1" ng-model="state.timeZone1" required/>
+                </div>
+                <div class="form-group">
+                    <label for="timeZone1">Time Zone 2</label>
+                    <input type="text" class="form-control" name="timeZone2" placeholder="Time Zone 2" ng-model="state.timeZone2" />
+                </div>
+                <div class="form-group">
+                    <label for="countryCode">Country Code</label>
+                    <input type="text" class="form-control" name="countryCode" placeholder="Country Code" ng-model="state.countryCode" required ng-minlength="3" ng-maxlength="3" />
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="dst" id="doesDST" value="YES" ng-model="state.dst" checked>
+                    Does Observe DST
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="dst" id="doesNotDST" value="NO" ng-model="state.dst">
+                    Does Not Observe DST
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" ng-submit ng-click="save()" ng-disabled="EditStates.$submitted && EditStates.$invalid">Submit</button>
+                <button type="submit" class="btn btn-danger" ng-click="delete()" ng-disabled="!isUpdating">Delete</button>
+                 <button type="submit" class="btn btn-default" ng-click="go('/')">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

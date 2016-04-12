@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html ng-app="scopeApp">
+     <head>
+        <title>Scopes</title>
+        <link href="/common/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet"/>
+    </head>
+    
+    <body>
+        <div class="container" ng-controller="ParentController">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1 alert"><h3>Choose your Person</h3></div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-2 col-md-offset-1 bg-info alert" ng-controller="ListController">
+                  <ul>
+                      <li ng-repeat="one in people"><a href ng-click="selectPerson(one)">{{one.Name}}</a></li>
+                  </ul>
+              </div>
+
+                <div class="col-md-4" ng-controller="PersonController">
+                    <table>
+                            <tr><td>Id</td><td>{{person.Id}}</td></tr>
+                            <tr><td>Name</td><td>{{person.Name}}</td></tr>
+                            <tr><td>Age</td><td>{{person.Age}}</td></tr>
+                            <tr><td>Gender</td><td>{{person.Gender}}</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

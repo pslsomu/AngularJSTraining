@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html ng-app="scopeApp">
+     <head>
+        <title>Scopes</title>
+        
+
+        <link href="/common/css/bootstrap/bootstrap.css" type="text/css" />
+        
+    </head>
+    <body>
+        <div class="container" ng-controller="ParentController"> 
+            <div class="row">
+                <div class="col-md-4" ng-controller="ListController">
+                    
+                    <!-- 
+                        Output all of the teams that are in the array. There should be 
+                        a way to select one of the teams in the list
+                    -->
+                    <ul>
+                        <li ng-repeat="one in teams"><a href ng-click="selectTeam(one)">{{one.Name}}</a></li>
+                    </ul>     
+                </div>
+                <div class="col-md-4" ng-controller="TeamController">
+                    <!-- 
+                        Create a template to show the selected team
+                    -->
+                    <table>
+                            <tr><td>Name</td><td>{{team.Name}}</td></tr>
+                            <tr><td>League</td><td>{{team.League}}</td></tr>
+                            <tr><td>Division</td><td>{{team.Division}}</td></tr>
+                            <tr><td>Wins</td><td>{{team.Wins}}</td></tr>
+                            <tr><td>Wins</td><td>{{team.Loses}}</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

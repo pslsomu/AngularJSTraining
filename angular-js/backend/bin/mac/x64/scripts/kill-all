@@ -1,0 +1,3 @@
+netstat -anp 2> /dev/null | grep :9080 | egrep -o "[0-9]+/node" | cut -d'/' -f1 | xargs kill
+netstat -anp 2> /dev/null | grep :9081 | egrep -o "[0-9]+/node" | cut -d'/' -f1 | xargs kill
+netstat -anp 2> /dev/null | grep :27017 | egrep -o "[0-9]+/mongod" | cut -d'/' -f1 | xargs kill

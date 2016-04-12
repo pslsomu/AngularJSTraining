@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html ng-app="filterApp">
+     <head>
+        <title>Filter App</title>
+    </head>
+    <body ng-controller="MainController">
+        <h1>Filter Controller</h1>
+        <h2>Filter By:</h2>
+        <ul>
+            <li>By Name: <input type="text" ng-model="filter.Name" /></li>
+            <li>By Gender:  <input type="radio" ng-model="filter.Gender" name="female" id="female" value="Female" />
+                            <label for="female">Female</label>
+                            <input type="radio" ng-model="filter.Gender" name="male" id="male" value="Male" />
+                            <label for="male">Male</label></li>
+        </ul>
+
+
+
+        <h2>Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="one in people | filter:filter | overTheHill">
+                    <td>{{one.Name}}</td>
+                    <td>{{one.Age}}</td>
+                    <td>{{one.Gender}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers.js"></script>
+        <script src="filters.js"></script>
+    </body>
+</html>

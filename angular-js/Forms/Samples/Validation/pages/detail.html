@@ -1,0 +1,64 @@
+ <form-state form="EditStates"></form-state>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2>Fill in the Form Below</h2>
+            <form name="EditStates" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="State Name" ng-model="state.name" required />
+                </div>
+                <div class="form-group">
+                    <label for="abbreviation">Abbreviation</label>
+                    <input type="text" class="form-control" name="abbreviation" placeholder="State Abbreviation" ng-model="state.abbreviation" required ng-maxlength="2" ng-minlength="2"/>
+                </div>
+                <div class="form-group">
+                    <label for="capital">Capital</label>
+                    <input type="text" class="form-control" name="capital" placeholder="Capital" ng-model="state.capital" required/>
+                </div>
+                <div class="form-group">
+                    <label for="mostPopulousCity">Most Populous City</label>
+                    <input type="text" class="form-control" name="mostPopulousCity" placeholder="Most Populous City" ng-model="state.mostPopulousCity" required />
+                </div>
+                <div class="form-group">
+                    <label for="population">Population</label>
+                    <input type="number" class="form-control" name="population" placeholder="Population" ng-model="state.population" required />
+                </div>
+                <div class="form-group">
+                    <label for="squareMiles">Square Miles</label>
+                    <input type="number" class="form-control" name="squareMiles" placeholder="Square Miles" ng-model="state.squareMiles" required />
+                </div>
+                <div class="form-group">
+                    <label for="timeZone1">Time Zone 1</label>
+                    <input type="text" class="form-control" name="timeZone1" placeholder="Time Zone 1" ng-model="state.timeZone1" required/>
+                </div>
+                <div class="form-group">
+                    <label for="timeZone1">Time Zone 2</label>
+                    <input type="text" class="form-control" name="timeZone2" placeholder="Time Zone 2" ng-model="state.timeZone2" />
+                </div>
+                <div class="form-group">
+                    <label for="countryCode">Country Code</label>
+                    <input type="text" class="form-control" name="countryCode" placeholder="Country Code" ng-model="state.countryCode" required ng-minlength="3" ng-maxlength="3" />
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="dst" name="doesDST" value="YES" ng-model="state.dst" checked>
+                    Does Observe DST
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="dst" name="doesNotDST" value="NO" ng-model="state.dst">
+                    Does Not Observe DST
+                </label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" ng-click="save()" >Submit</button>
+                <button type="submit" class="btn btn-danger" ng-click="delete()" ng-disabled="!isUpdating">Delete</button>
+                 <button type="submit" class="btn btn-default" ng-click="go('/')">Cancel</button>
+            </form>
+        </div>
+    </div>
+    
+   
+</div>

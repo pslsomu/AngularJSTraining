@@ -1,0 +1,7 @@
+<h2>List of People</h2>
+<ul>
+    <li ng-repeat="one in people | filter:filter | orderBy:sortDirection"><a ui-sref=".detail({id:one.Id})">{{one.Name}}</a></li>
+</ul>
+
+<div ui-view style="border:green solid 2pt">
+</div>

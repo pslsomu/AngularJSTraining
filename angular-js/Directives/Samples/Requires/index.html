@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html ng-app="myApp">
+     <head>
+        <title>Require Directives</title>
+        <link href="/common/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body ng-controller="HomeController">
+        <h1>Directives</h1>
+
+        <container>
+            <pane header="person.Name" ng-repeat="person in people">
+                <ul>
+                    <li><b>Name:</b> {{person.Name}}</li>
+                    <li><b>Age:</b> {{person.Age}}</li>
+                    <li><b>Gender:</b> {{person.Gender}}</li>
+                </ul>
+            </pane>
+        </container>
+        
+        <pane header="person.Name" ng-repeat="person in people">
+                <ul>
+                    <li><b>Name:</b> {{person.Name}}</li>
+                    <li><b>Age:</b> {{person.Age}}</li>
+                    <li><b>Gender:</b> {{person.Gender}}</li>
+                </ul>
+        </pane>
+        
+        <script src="/common/js/jquery/jquery.js"></script>
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="directives/directives.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

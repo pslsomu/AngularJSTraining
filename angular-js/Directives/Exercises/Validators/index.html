@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html ng-app="productApp">
+     <head>
+        <title>Product App</title>
+        <link href="/common/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet"/>
+        <style>
+            input.ng-invalid.ng-dirty {
+                border-color: red;
+            }    
+        </style>
+    </head>
+    <body ng-controller="AppController" ng-view>
+         
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="/common/js/angular-route/angular-route.js"></script>
+        <script src="/common/js/angular-resource/angular-resource.js"></script>
+        <script src="/common/js/angular-messages/angular-messages.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="js/factories.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

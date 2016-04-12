@@ -1,0 +1,43 @@
+<!--
+    Wire up this page to the myTeamApp Module
+
+    Wire the main element on the page to the ListController
+
+    Create a table that outputs all of the elements in the array
+
+-->
+
+<!DOCTYPE html>
+    <html ng-app="myTeamApp">
+     <head>
+        <title>Repeater</title>
+    </head>
+    <body ng-controller="ListController">
+        <h1>My Teams</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team Name</th>
+                    <th>League</th>
+                    <th>Division</th>
+                    <th>Wins</th>
+                    <th>Loses</th>
+                    <th>Win %</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="team in teams">
+                    <td>{{team.Name}}</td>
+                    <td>{{team.League}}</td>
+                    <td>{{team.Division}}</td>
+                    <td>{{team.Wins}}</td>
+                    <td>{{team.Loses}}</td>
+                    <td>{{(team.Wins / (team.Wins + team.Loses)) * 1000}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>

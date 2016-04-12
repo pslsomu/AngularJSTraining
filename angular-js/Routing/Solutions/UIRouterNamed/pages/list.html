@@ -1,0 +1,21 @@
+<h2>Records</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>League</th>
+            <th>Division</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="one in teams | filter:filter | orderBy:sort.on:sort.direction">
+            <td>{{one.Name}}</td>
+            <td>{{one.League}}</td>
+            <td>{{one.Division}}</td>
+            <td><a ui-sref=".detail({id:one.Id})">Details</a></td>
+        </tr>
+    </tbody>
+</table>
+<div ui-view>
+</div>

@@ -1,0 +1,19 @@
+<h2>Filter By:</h2>
+<ul>
+    <li>By Name: <input type="text" ng-model="filter.Name" /></li>
+    <li>By Age: <input type="number" ng-model="filter.Age" /></li>
+    <li>By Gender:  <input type="radio" ng-model="filter.Gender" name="female" id="female" value="Female" />
+                    <label for="female">Female</label>
+                    <input type="radio" ng-model="filter.Gender" name="male" id="male" value="Male" />
+                    <label for="male">Male</label></li>
+</ul>
+
+
+<h2>Order By:</h2>
+<ul>
+    <li>Sort On: <select name="order" ng-options="one for one in availableForSort track by one" ng-model="sortOn"></select></li>
+    <li>Direction:  <input type="radio" ng-model="sortDirection" name="asc" id="asc" ng-value="false" />
+                    <label for="asc">Asc</label>
+                    <input type="radio" ng-model="sortDirection" name="desc" id="desc" ng-value="true" />
+                    <label for="desc">Desc</label></li>
+</ul>

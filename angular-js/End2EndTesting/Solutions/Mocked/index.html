@@ -1,0 +1,22 @@
+<!--
+    Set this page up so that it invokes the mock module instead of 
+    the main module
+-->
+<!DOCTYPE html>
+    <html ng-app="myHttpTest">
+     <head>
+        <title>First HTTP</title>
+    </head>
+    <body ng-controller="MainController">
+        
+        <h1>Products</h1>
+        <ul>
+            <li ng-repeat="product in products">{{product.productName}}</li>
+        </ul>
+        
+        <script src="/common/js/angular/angular.js"></script>
+        <script src="/common/js/angular-mocks/angular-mocks.js"></script>
+        <script src="controllers.js"></script>
+        <script src="mock.js"></script>
+    </body>
+</html>

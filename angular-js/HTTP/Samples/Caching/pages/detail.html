@@ -1,0 +1,12 @@
+<h2 ng-hide="state">There was no State found for the given ID</h2>
+
+<div ng-show="state">
+    <h2>State Details</h2>
+    <ul>
+        <li>Name: {{state.name}}</li>
+        <li>Abbreviation: {{state.abbreviation}}</li>
+        <li>Capital: {{state.capital}}</li>
+    </ul>
+    
+    <a href ng-click="go('/')"> Home </a>
+</div>
