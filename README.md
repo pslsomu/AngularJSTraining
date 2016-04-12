@@ -1,1 +1,1 @@
-# AngularJSTraining-ProTech
+# AngularJSTraining
